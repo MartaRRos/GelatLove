@@ -1,1 +1,105 @@
+@use '../mixins/responsive.scss' as *;
+//Header Nav
 
+.logo{
+    width: 250px;
+    height: 80px;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    background-color: pink;
+    .header-container{
+        width: 100%;
+    }
+    .header-container__menu{
+        display: flex;
+        align-items: center;
+    }
+    .navbar-toggler-icon{
+        width: 30px;
+        margin-left: 90px;
+    }
+    .navbar-links{
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        background-color: lightblue;
+        li{
+            padding: 10px;
+        }
+        
+    }
+
+    .navbar-links.navbar-links{
+        &:hover{
+            background-color: bisque;
+        }
+    }
+
+    .profile {
+        display: none; // Ocultamos el icono de usuario para simplificar el diseño móvil
+    }
+    
+
+    @include responsive(desktop){
+        background-color: lightblue;
+        .logo{
+            width: 270px;
+            height: 80px;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+          }
+        .hamburger-menu {
+            display: none; // Por defecto, ocultamos el icono en pantallas grandes
+        }
+        .navbar{
+            display: flex;
+            .navbar-links {
+                display: flex !important;
+                flex-direction:row;
+                margin-right: 50px;
+                gap: 30px;
+                color: firebrick;
+              }
+        }
+        .profile {
+            display: flex; 
+        }
+        .myprofile {
+            display: none; // Ocultamos el icono de usuario para simplificar el diseño móvil
+        }
+    }
+}
+
+
+    
+
+    
+ 
+
+
+
+
+
+
+/*.aside{
+    width: 100%;
+    height: 240px;
+    background-image: url(/assets/images/bg-main-mobile.png);
+    background-color: red;
+        @include responsive(laptop){
+            width: 483px;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+}*/

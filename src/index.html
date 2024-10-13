@@ -6,24 +6,37 @@
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CAMBIA EL TITLE!!! -->
-    <title>Vite Template</title>
+    <title>GelatLove Helados</title>
   </head>
   <body>
-    <h1>HOME</h1>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">HOME</a>
-        </li>
-        <li>
-          <a href="./html/about.html">ABOUT</a>
-        </li>
-        <li>
-          <a href="./html/contact.html">CONTACT</a>
-        </li>
-      </ul>
-    </nav>
-    <button id="button">CLICK HOME</button>
+    <header>
+      <div class="header-container">
+        <div class="header-container__menu">
+            <a href=""><img class="logo" src="./assets/images/BrandLogo.svg" alt="Brand Image"></a>
+            <div class="hamburger-menu"><!-- Icono de hamburguesa, inicialmente oculto en pantallas grandes -->
+              <span><img id="hamburger-icon" class="navbar-toggler-icon" src="./assets/images/Icons/burger-menu.svg" alt=""></span> <!-- Bootstrap icon -->
+            </div>
+        </div>
+          <nav class="navbar">
+            <ul class="navbar-links" id="navbar-links">
+              <li>
+                <a href="./html/about.html">Sobre nosotros</a>
+              </li>
+              <li>
+                <a href="./html/contact.html">Tienda</a>
+              </li>
+              <li>
+                <a class="myprofile" href="./html/contact.html">Mi cuenta</a>
+              </li>
+              <li>
+                <a href=""><img class="profile" src="./assets/images/Icons/person-circle.svg" alt="Profile logo"></a>
+              </li>
+
+            </ul>
+          </nav>
+      </header>
+    </div>
+    
 
     <script type="module" src="./js/index.js"></script>
   </body>
