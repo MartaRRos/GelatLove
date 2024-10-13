@@ -9,14 +9,21 @@
 header{
     width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    background-color: pink;
+    background-color: #F4F4F4;
+    z-index: 999;
     .header-container{
         width: 100%;
     }
     .header-container__menu{
         display: flex;
         align-items: center;
+    }
+    .navbar{
+        background-color: #F4F4F4;
     }
     .navbar-toggler-icon{
         width: 30px;
@@ -28,16 +35,16 @@ header{
         flex-direction: column;
         align-items: center;
         color: black;
-        background-color: lightblue;
         li{
             padding: 10px;
         }
         
     }
 
-    .navbar-links.navbar-links{
+    .navbar-links a{
         &:hover{
-            background-color: bisque;
+            font-weight: 800;
+            color: #E51D36;
         }
     }
 
@@ -47,7 +54,7 @@ header{
     
 
     @include responsive(desktop){
-        background-color: lightblue;
+        background-color: #F4F4F4;
         .logo{
             width: 270px;
             height: 80px;
@@ -67,8 +74,11 @@ header{
                 display: flex !important;
                 flex-direction:row;
                 margin-right: 50px;
-                gap: 30px;
-                color: firebrick;
+                gap: 10px;
+                a &:hover{
+                    font-weight: 800;
+                    color: #E51D36;
+                }
               }
         }
         .profile {

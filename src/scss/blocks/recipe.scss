@@ -1,0 +1,36 @@
+@use '../mixins/responsive.scss' as *;
+
+.recipe{
+    display: flex;
+    flex-direction: column;
+    @include responsive(desktop){
+        flex-direction: row;
+        padding: 100px;
+    }
+}
+
+.rectangle__1, .rectangle__2, .rectangle__3{
+    width: 250px;
+    padding: 20px;
+    margin: 20px auto; // Centra el rectángulo verticalmente y horizontalmente
+    border-radius: 30px;
+    background-color: #f0f0f0; // Color de fondo del rectángulo
+    text-align: center; // Centra el contenido del texto
+
+    img {
+        width: 100%;
+        transform: scale(0.6);
+        height: auto;
+        margin-bottom: 15px; // Espacio entre la imagen y el texto
+    }
+
+    h3 {
+        margin: 10px 0;
+        color: #333;
+        font-weight: bold;
+    }
+
+    p {
+        color: #555;
+    }
+}
