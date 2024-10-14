@@ -5,32 +5,60 @@
     flex-direction: column;
     @include responsive(desktop){
         flex-direction: row;
-        padding: 100px;
+        justify-content: center;
     }
 }
+.rectangle__1{
+    background-color: pink;
+}
+
+.rectangle__2{
+    background-color: palevioletred;
+}
+
+.rectangle__3{
+    background-color: gray;
+}
+
+h3{
+    color: aquamarine;
+}
+
+p {
+    color: #f4f4f4;
+}
+
 
 .rectangle__1, .rectangle__2, .rectangle__3{
     width: 250px;
     padding: 20px;
-    margin: 20px auto; // Centra el rectángulo verticalmente y horizontalmente
+    margin: 20px auto; 
     border-radius: 30px;
-    background-color: #f0f0f0; // Color de fondo del rectángulo
-    text-align: center; // Centra el contenido del texto
+    text-align: center; 
 
     img {
         width: 100%;
         transform: scale(0.6);
         height: auto;
-        margin-bottom: 15px; // Espacio entre la imagen y el texto
+        margin-bottom: 15px; 
     }
 
     h3 {
         margin: 10px 0;
-        color: #333;
         font-weight: bold;
     }
 
-    p {
-        color: #555;
+    @include responsive(desktop){
+        width: 350px;
+        padding: 50px;
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        
+        img {
+            width: 100%;
+            transform: scale(0.6);
+            margin-bottom: 20px; 
+        }
     }
 }
