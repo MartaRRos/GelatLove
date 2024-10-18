@@ -24,10 +24,22 @@ header{
     .navbar{
         background-color: #F4F4F4;
     }
+    .header-container__menu__mobileicons{
+        display: flex;
+    }
+    .mobileicons{
+        display: flex;
+        align-items: center;
+        margin-left: 190px;
+    }
     .navbar-burger-icon{
         cursor: pointer;
         width: 30px;
-        margin-left: 200px;
+        margin: 20px;
+    }
+    .navbar-logo-icon{
+        cursor: pointer;
+        width: 25px;
     }
     .navbar-links{
         width: 100%;
@@ -36,7 +48,7 @@ header{
         align-items: center;
         color: black;
         li{
-            padding: 10px;
+            padding: 7px;
         }
         
     }
@@ -48,8 +60,12 @@ header{
         }
     }
 
-    .profile {
+    .profile{
         display: none; 
+    }
+    .cart{
+        display: none;
+
     }
     
 
@@ -65,6 +81,9 @@ header{
             align-items: center;
             width: 100%;
           }
+        .mobile__cart{
+            display: none;
+        }
         .hamburger-menu {
             display: none; 
         }
@@ -81,7 +100,7 @@ header{
                 }
               }
         }
-        .profile {
+        .profile, .cart {
             display: flex; 
         }
         .myprofile {
