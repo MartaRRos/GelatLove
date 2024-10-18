@@ -8,8 +8,64 @@
     <title>Vite Template</title>
   </head>
   <body>
-   
+    <!--Header-->
+    <header>
+      <div class="header-container">
+        <div class="header-container__menu">
+          <div class="header-container__menu__mobileicons">
+            <a href="../index.html"><img class="logo" src="../assets/images/BrandLogo.svg" alt="Brand logo"></a>
+            <div class="mobileicons">
 
+              <div class="mobileicons__cart"> <!-- Icono de carrito para mobile-->
+                <span><img id="" class="navbar-cart-icon" src="../assets/images/Icons/cart.svg" alt=""></span> 
+              </div>
+        
+              <div class="hamburger-menu"> <!-- Icono de hamburguesa desplegable-->
+                <span><img id="hamburger-icon" class="navbar-burger-icon" src="../assets/images/Icons/burger-menu.svg" alt=""></span> 
+              </div>
+              
+            </div>
+          </div>
+        </div>
+          <nav class="navbar">
+            <ul class="navbar-links" id="navbar-links">
+              <li>
+                <a href="./about.html">Sobre nosotros</a>
+              </li>
+              <li>
+                <a href="./html/store.html">Tienda</a>
+              </li>
+              <li>
+                <a class="myprofile" href="#">Mi cuenta</a>
+              </li>
+              <li>
+                <!-- Icono de carro para menú grande-->
+                <a href=""><img class="cart" src="../assets/images/Icons/cart.svg" alt="Cart icon"></a>
+              </li>
+              <li>
+                <!-- Icono de perfil para menú grande-->
+                <a href=""><img class="profile" src="../assets/images/Icons/person-circle.svg" alt="Profile logo"></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!--Catálogo de helados-->
+    <div class="catalog" id="catalog">
+      <div class="text">
+        <h1>Tarrinas Gelat-Love</h1>
+        <span>Cuando se trata de calidad, dejamos que nuestras tarrinas hablen por sí solas. Siempre es buena idea compartir una tarrina (o no). Estamos seguros de que más de una te enamorará.</span>
+      </div>
+    </div>
+    <!--Cards helados-->
+    <div class="hola"></div>
+      <div class="filters">
+        <h3>hola</h3>
+      </div>
+      <div class="helado-container" id="heladoContainer"></div>
+    </div>
     
     <!-- OBLIGATORIO PONER EL ACCESO AL SCRIPT -->
     <script type="module" src="../js/index.js"></script>
