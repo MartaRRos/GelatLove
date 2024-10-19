@@ -4,6 +4,9 @@
     margin-top: 80px;
     padding: 15px;
     text-align: center;
+    @include responsive(desktop) {
+        padding: 40px;
+    }
 }
 
 .tienda{
@@ -16,10 +19,21 @@
 }
 
 //Filtros
+.products{
+    @include responsive(desktop) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
 .filters {
     background-color: lightpink; 
     padding: 20px; 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    @include responsive(desktop) {
+        width: 40%;
+    }
 
     h2 {
         font-size: 24px; 

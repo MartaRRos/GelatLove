@@ -1,72 +1,83 @@
 @use '../mixins/responsive.scss' as *;
-
 .quality {
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    gap: 20px; 
-    @include responsive(desktop){
+    gap: 20px;
+
+    @include responsive(desktop) {
         flex-direction: row;
-        
     }
+
     img {
-        max-width: 200px; 
+        max-width: 200px;
         height: auto;
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
         margin-right: 320px;
-        @include responsive(desktop){
+        display: none;
+
+        @include responsive(desktop) {
+            display: flex;
             max-width: 450px;
-            margin-bottom: 10px; 
+            margin-bottom: 10px;
             margin-left: -20px;
             margin-right: 90px;
         }
     }
+
     h1 {
         font-size: 24px;
-        text-align: center; 
+        text-align: center;
         margin-bottom: 1px;
-        @include responsive(desktop){
+
+        @include responsive(desktop) {
             text-align: left;
             font-size: 70px;
             padding-right: 400px;
         }
     }
+
     h4 {
         font-size: 16px;
-        text-align: center; 
-        margin-bottom: 1px;
+        text-align: center;
+        margin-bottom: 20px;
         color: aqua;
         font-weight: 600;
-        @include responsive(desktop){
+
+        @include responsive(desktop) {
             text-align: left;
             padding-right: 200px;
             font-size: 25px;
         }
     }
+
     a {
-        display: flex;
-        justify-content: center;
-        padding: 10px;
-        margin: 30px;
+        display: inline-block; 
+        padding: 10px 20px; 
         background-color: #E51D36; 
         color: white;
-        border-radius: 5px; 
+        border-radius: 5px;
+        text-align: center; 
+        text-decoration: none; 
+
         &:hover {
             background-color: palevioletred;
-        }   
-        @include responsive(desktop){
+        }
+
+        @include responsive(desktop) {
+            margin-top: 20px; 
+            text-align: left; 
+            padding: 10px 60px;
         }
     }
-
 }
 
-.quality__text{
-    @include responsive(desktop){
+.quality__text {
+    @include responsive(desktop) {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; 
+        justify-content: flex-start;
+        align-items: flex-start; 
     }
 }
-
-
