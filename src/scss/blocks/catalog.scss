@@ -6,9 +6,57 @@
     text-align: center;
 }
 
+.tienda{
+    font-weight: 800;
+    color: #E51D36;
+}
+
 .hola{
 
 }
+
+//Filtros
+.filters {
+    background-color: lightpink; 
+    padding: 20px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        font-size: 24px; 
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .filter-category {
+        margin-bottom: 20px;
+
+        h3 {
+            font-size: 20px; 
+            margin-bottom: 10px;
+            color: #E51D36;
+        }
+
+        .filter-options {
+            display: flex; 
+            flex-direction: column;
+            gap: 5px;
+
+            label {
+                font-size: 16px;
+                color: #555; 
+                cursor: pointer; 
+
+                input {
+                    margin-right: 10px; 
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+//Card Helados
 
 .helado-container {
     display: flex;
@@ -59,7 +107,7 @@
         margin: 10px 0;
         color: #333;
       }
-  
+
       p {
         height: 80px;
         font-size: 14px;

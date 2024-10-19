@@ -33,7 +33,7 @@
                 <a href="./about.html">Sobre nosotros</a>
               </li>
               <li>
-                <a href="./html/store.html">Tienda</a>
+                <a href="#" class="tienda">Tienda</a>
               </li>
               <li>
                 <a class="myprofile" href="#">Mi cuenta</a>
@@ -59,13 +59,39 @@
         <span>Cuando se trata de calidad, dejamos que nuestras tarrinas hablen por sí solas. Siempre es buena idea compartir una tarrina (o no). Estamos seguros de que más de una te enamorará.</span>
       </div>
     </div>
-    <!--Cards helados-->
-    <div class="hola"></div>
-      <div class="filters">
-        <h3>hola</h3>
+    <!--Filtros-->
+    <section class="filters">
+      <h2>Filtros</h2>
+      <div class="filter-category">
+        <h3>Helados</h3>
+        <div class="filter-options">
+          <label>
+            <input type="checkbox" value="vainilla">
+            Vainilla
+          </label>
+          <label>
+            <input type="checkbox" value="chocolate">
+            Chocolate
+          </label>
+          <label>
+            <input type="checkbox" value="caramelo">
+            Caramelo
+          </label>
+        </div>
       </div>
-      <div class="helado-container" id="heladoContainer"></div>
-    </div>
+      <div class="filter-category">
+        <h3>New in</h3>
+        <div class="filter-options">
+          <label>
+            <input type="checkbox" value="new">
+            Nuevos productos
+          </label>
+        </div>
+      </div>
+    </section>
+    <!--Cards helados-->
+    <div class="helado-container" id="heladoContainer"></div>
+
     
     <!-- OBLIGATORIO PONER EL ACCESO AL SCRIPT -->
     <script type="module" src="../js/index.js"></script>
