@@ -86,6 +86,41 @@ const helados = [
   }
 ];
 
+const vainilla = document.getElementById('vainilla');
+vainilla.addEventListener('change', checkedVainilla);
+
+const chocolate = document.getElementById('chocolate');
+chocolate.addEventListener('change', checkedChocolate);
+
+const caramelo = document.getElementById('caramelo');
+caramelo.addEventListener('change', checkedCaramelo);
+
+const newin = document.getElementById('newin');
+newin.addEventListener('change', checkedNewin);
+
+guardarFiltros = [];
+
+function checkedVainilla() {
+  console.log(this.guardarFiltros);
+  if (vainilla.checked) {
+    this.guardarFiltros.push('vainilla');
+  } else {
+    const vainillaPosition = this.guardarFiltros.indexOff('vainilla');
+    this.guardarFiltros.splice(vainillaPosition, 1);
+  }
+  console.log(this.guardarFiltros);
+}
+
+function checkedChocolate() {
+  console.log(chocolate.checked);
+}
+function checkedCaramelo() {
+  console.log(caramelo.checked);
+}
+function checkedNewin() {
+  console.log(newin.checked);
+}
+
 function pintarHelados() {
   const contenedor = document.getElementById('heladoContainer');
 
