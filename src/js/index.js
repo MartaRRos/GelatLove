@@ -25,7 +25,9 @@ const helados = [
     descripcion: 'Inconfundible, clásico y cremoso helado de vainilla.',
     image: '../assets/images/IceCream/vainilla.png',
     precio: 6.99,
-    stock: 10
+    stock: 10,
+    ingredientes: ['vainilla'],
+    nuevo: false
   },
   {
     id: 2,
@@ -33,7 +35,9 @@ const helados = [
     descripcion: 'Helado de puro chocolate belga con delicadas láminas de chocolate belga negro.',
     image: '../assets/images/IceCream/chocolate.png',
     precio: 6.99,
-    stock: 10
+    stock: 10,
+    ingredientes: ['chocolate'],
+    nuevo: false
   },
   {
     id: 3,
@@ -41,7 +45,9 @@ const helados = [
     descripcion: 'Helado de crema y fresa con trozos de las fresas más selectas.',
     image: '../assets/images/IceCream/fresacrema.png',
     precio: 6.99,
-    stock: 10
+    stock: 10,
+    ingredientes: ['fresa'],
+    nuevo: true
   },
   {
     id: 4,
@@ -49,7 +55,9 @@ const helados = [
     descripcion: 'Helado de frambuesa con helado de vainilla y crujiente de chocolate.',
     image: '../assets/images/IceCream/vainillaraspberry.png',
     precio: 6.99,
-    stock: 10
+    stock: 10,
+    ingredientes: ['vainilla', 'chocolate'],
+    nuevo: false
   },
   {
     id: 5,
@@ -57,7 +65,9 @@ const helados = [
     descripcion: 'Helado con base de tarta de queso y notas de vainilla.',
     image: '../assets/images/IceCream/redvelvet.png',
     precio: 6.99,
-    stock: 10
+    stock: 10,
+    ingredientes: ['vainilla'],
+    nuevo: true
   },
   {
     id: 6,
@@ -65,16 +75,19 @@ const helados = [
     descripcion: 'Extraordinario helado de tarta de queso con salsa de fresa y trocitos de galleta crujiente.',
     image: '../assets/images/IceCream/cheesecake.png',
     precio: 6.99,
-    stock: 10
+    stock: 10,
+    ingredientes: ['fresa'],
+    nuevo: true
   },
   {
     id: 7,
     nombre: 'Caramel Chai Latte',
-    descripcion:
-      'El delicioso sabor de caramelo a través de un sublime helado de caramelo, salsa y crujientes trozos de caramelo.',
+    descripcion: 'Delicioso sabor de caramelo a través de un sublime helado de caramelo, salsa y trozos de caramelo.',
     image: '../assets/images/IceCream/caramelchailatte.png',
     precio: 6.99,
-    stock: 10
+    stock: 10,
+    ingredientes: ['caramelo'],
+    nuevo: false
   },
   {
     id: 8,
@@ -82,45 +95,59 @@ const helados = [
     descripcion: 'Helado de dulce de leche con remolinos de salsa de dulce de leche.',
     image: '../assets/images/IceCream/dulceleche.png',
     precio: 6.99,
-    stock: 10
+    stock: 10,
+    ingredientes: ['caramelo'],
+    nuevo: false
   }
 ];
 
+//FILTROS
 const vainilla = document.getElementById('vainilla');
-vainilla.addEventListener('change', checkedVainilla);
+vainilla.addEventListener('change', filtrarHelados);
 
 const chocolate = document.getElementById('chocolate');
-chocolate.addEventListener('change', checkedChocolate);
+chocolate.addEventListener('change', filtrarHelados);
 
 const caramelo = document.getElementById('caramelo');
-caramelo.addEventListener('change', checkedCaramelo);
+caramelo.addEventListener('change', filtrarHelados);
 
 const newin = document.getElementById('newin');
-newin.addEventListener('change', checkedNewin);
+newin.addEventListener('change', filtrarHelados);
 
-guardarFiltros = [];
+function filtrarHelados() {
+  const contenedor = document.getElementById('heladoContainer');
+  contenedor.innerHTML = '';
+  if (vainilla.checked || chocolate.checked || caramelo.checked || newin.checked) {
+    helados.forEach(helado => {
+      const card = document.createElement('div');
+      card.classList.add('helado-card');
 
-function checkedVainilla() {
-  console.log(this.guardarFiltros);
-  if (vainilla.checked) {
-    this.guardarFiltros.push('vainilla');
+      if (
+        (vainilla.checked && helado.ingredientes.includes('vainilla')) ||
+        (chocolate.checked && helado.ingredientes.includes('chocolate')) ||
+        (caramelo.checked && helado.ingredientes.includes('caramelo')) ||
+        (newin.checked && helado.nuevo)
+      ) {
+        card.innerHTML = `
+          <img src="${helado.image}" alt="${helado.nombre}">
+          <h3>${helado.nombre}</h3>
+          <p>${helado.descripcion}</p>
+          <div class="precio">${helado.precio.toFixed(2)}€</div>
+          <div class="quantity-container">
+          <label for="cantidad-${helado.id}">Cantidad:</label>
+          <input id="cantidad-${helado.id}" type="number" value="1" min="1" max="${helado.stock}">
+          </div>
+          <button>Añadir producto</button>
+        `;
+        contenedor.appendChild(card);
+      }
+    });
   } else {
-    const vainillaPosition = this.guardarFiltros.indexOff('vainilla');
-    this.guardarFiltros.splice(vainillaPosition, 1);
+    pintarHelados();
   }
-  console.log(this.guardarFiltros);
 }
 
-function checkedChocolate() {
-  console.log(chocolate.checked);
-}
-function checkedCaramelo() {
-  console.log(caramelo.checked);
-}
-function checkedNewin() {
-  console.log(newin.checked);
-}
-
+//CARD HELADOS
 function pintarHelados() {
   const contenedor = document.getElementById('heladoContainer');
 

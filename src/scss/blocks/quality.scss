@@ -53,23 +53,26 @@
     }
 
     a {
-        display: inline-block; 
+        display: block; 
+        width: fit-content;
         padding: 10px 20px; 
         background-color: #E51D36; 
         color: white;
         border-radius: 5px;
         text-align: center; 
-        text-decoration: none; 
-
+        text-decoration: none;
+        margin: 0 auto;
+        
         &:hover {
             background-color: palevioletred;
         }
-
+    
         @include responsive(desktop) {
             margin-top: 20px; 
             text-align: left; 
             padding: 10px 60px;
-        }
+            margin: 0;
+        }    
     }
 }
 

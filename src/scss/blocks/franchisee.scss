@@ -1,21 +1,25 @@
 @use '../mixins/responsive.scss' as *;
 
 .franchisee {
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    background-color: lightblue; 
-    padding: 20px; 
+    background-color: lightblue;
+    padding: 20px;
+
     .content {
-        flex: 1; 
-        padding-right: 20px; 
+        flex: 1;
+        padding-right: 20px;
+        margin: 15px;
+
         h2 {
-            font-size: 28px; 
+            font-size: 28px;
             margin-bottom: 10px;
             text-align: center;
             color: chocolate;
         }
+
         p {
-            font-size: 16px; 
+            font-size: 16px;
             text-align: center;
             color: darkorange;
             padding-bottom: 20px;
@@ -23,10 +27,37 @@
     }
 
     .franchisee__image {
-        flex: 1; 
+        flex: 1;
+
         img {
-            max-width: 100%; 
-            height: auto; 
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    @include responsive(desktop) {
+        flex-direction: row;
+        justify-content: space-between; /* Aumentar el espacio entre texto e imagen */
+        padding: 30px; /* Aumentar el padding general */
+
+        .content {
+            flex: 1;
+            margin: 5%;
+            h2, p {
+                text-align: left; /* Alineamos el texto a la izquierda en desktop */
+            }
+            h2{
+                font-size: 50px;
+            }
+            p{
+                font-size: 25px;
+            }
+        }
+
+        .franchisee__image {
+            flex: 1;
+            max-width: 600px; /* Limitar el ancho de la imagen */
+            margin-top: 7%;
         }
     }
 }

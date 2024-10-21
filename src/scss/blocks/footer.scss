@@ -1,1 +1,46 @@
-/* ESTILOS DEL FOOTER */
+@use '../mixins/responsive.scss' as *;
+
+.flex{
+    display: flex;
+}
+.footer{
+    margin-top: 74px;
+    border-top: 2px solid #ff0000;
+    padding: 50px;
+    align-items: center;
+    background-color: #ff0000;
+    img{
+        width: 30%;
+    }
+    div{
+        padding: 100px;
+        text-align: left;
+        h5{
+            font-weight: 600;
+            color: black;
+        }
+        h6{
+            font-weight: 400;
+            &:hover{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.redes{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: lightsalmon;
+    i{
+        color: red;
+        padding: 10px;
+    }
+}
+.propiedad{
+    background-color: black;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
