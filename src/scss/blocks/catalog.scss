@@ -14,8 +14,26 @@
     color: #E51D36;
 }
 
-.hola{
+.cart-badge {
+  position: absolute;
+  background-color: red;
+  color: white;
+  border-radius: 100px;
+  padding: 5px 7px;
+  font-size: 8px;
+  top: 19px;
+  right: 75px;
+  @include responsive(desktop) {
+    top: 19px;
+    right: 96px;
+  }
+}
 
+button:disabled{
+  background-color: #d16370;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 //Filtros

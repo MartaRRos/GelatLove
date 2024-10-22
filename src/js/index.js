@@ -131,19 +131,29 @@ function filtrarHelados() {
         (newin.checked && helado.nuevo)
       ) {
         card.innerHTML = `
-          <img src="${helado.image}" alt="${helado.nombre}">
-          <h3>${helado.nombre}</h3>
-          <p>${helado.descripcion}</p>
-          <div class="precio">${helado.precio.toFixed(2)}€</div>
-          <div class="quantity-container">
-          <label for="cantidad-${helado.id}">Cantidad:</label>
-          <input id="cantidad-${helado.id}" type="number" value="1" min="1" max="${helado.stock}">
-          </div>
-          <h5>${helado.stock < 6 ? 'Quedan pocas unidades' : ''}</h5> 
-          <button onclick="addProducts">Añadir producto</button>
-        `;
+        <img src="${helado.image}" alt="${helado.nombre}">
+        <h3>${helado.nombre}</h3>
+        <p>${helado.descripcion}</p>
+        <div class="precio">${helado.precio.toFixed(2)}€</div>
+        <div class="quantity-container">
+        <label for="cantidad-${helado.id}">Cantidad:</label>
+        <input id="cantidad-${helado.id}" type="number" value="${helado.stock === 0 ? '0' : '1'}" min="${
+          helado.stock === 0 ? '0' : '1'
+        }" max="${helado.stock}">
+        </div>
+        <h5>${helado.stock === 0 ? 'No queda stock' : helado.stock < 6 ? 'Quedan pocas unidades' : ''}</h5>
+        <button class="addProducts">Añadir producto</button>
+      `;
 
         contenedor.appendChild(card);
+
+        const addHelados = card.querySelector('.addProducts');
+        addHelados.addEventListener('click', function () {
+          addProducts(helado.id);
+        });
+        if (helado.stock === 0) {
+          addHelados.disabled = true;
+        }
       }
     });
   } else {
@@ -166,9 +176,11 @@ function pintarHelados() {
       <div class="precio">${helado.precio.toFixed(2)}€</div>
       <div class="quantity-container">
         <label for="cantidad-${helado.id}">Cantidad:</label>
-        <input id="cantidad-${helado.id}" type="number" value="1" min="1" max="${helado.stock}">
+        <input id="cantidad-${helado.id}" type="number" value="${helado.stock === 0 ? '0' : '1'}" min="${
+      helado.stock === 0 ? '0' : '1'
+    }" max="${helado.stock}">
       </div>
-      <h5>${helado.stock < 6 ? 'Quedan pocas unidades' : ''}</h5>
+      <h5>${helado.stock === 0 ? 'No queda stock' : helado.stock < 6 ? 'Quedan pocas unidades' : ''}</h5>
       <button class="addProducts">Añadir producto</button>
    `;
 
@@ -178,6 +190,9 @@ function pintarHelados() {
     addHelados.addEventListener('click', function () {
       addProducts(helado.id);
     });
+    if (helado.stock === 0) {
+      addHelados.disabled = true;
+    }
   });
 }
 
@@ -194,7 +209,24 @@ function addProducts(id) {
   } else {
     carrito.push(heladoAdd);
   }
-  console.log(carrito.length);
+
+  const numeroCarrito = document.getElementById('cart-count');
+  numeroCarrito.textContent = carrito.length;
+
+  const numeroCarritoMobile = document.getElementById('cart-count-mobile');
+  numeroCarritoMobile.textContent = carrito.length;
+  bajarStock(heladoAdd);
 }
 
+function bajarStock(heladoAdded) {
+  const heladoPos = helados.findIndex(helado => helado.id === heladoAdded.id);
+  helados[heladoPos].stock = helados[heladoPos].stock - heladoAdded.cantidad;
+  const contenedor = document.getElementById('heladoContainer');
+  contenedor.innerHTML = '';
+  if (vainilla.checked || chocolate.checked || caramelo.checked || newin.checked) {
+    filtrarHelados();
+  } else {
+    pintarHelados();
+  }
+}
 // MAÑANA STOCK Y DESABILITAR, ICONO CARRITO
