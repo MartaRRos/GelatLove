@@ -62,11 +62,18 @@ header{
 
     .profile{
         display: none; 
+        @include responsive(desktop){
+            width: 25px;
+        }
     }
     .cart{
         display: none;
+        @include responsive(desktop){
+            width: 25px;
+        }
 
     }
+    
     
 
     @include responsive(desktop){

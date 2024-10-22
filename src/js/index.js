@@ -35,7 +35,7 @@ const helados = [
     descripcion: 'Helado de puro chocolate belga con delicadas láminas de chocolate belga negro.',
     image: '../assets/images/IceCream/chocolate.png',
     precio: 6.99,
-    stock: 10,
+    stock: 5,
     ingredientes: ['chocolate'],
     nuevo: false
   },
@@ -101,6 +101,8 @@ const helados = [
   }
 ];
 
+const carrito = [];
+
 //FILTROS
 const vainilla = document.getElementById('vainilla');
 vainilla.addEventListener('change', filtrarHelados);
@@ -137,8 +139,10 @@ function filtrarHelados() {
           <label for="cantidad-${helado.id}">Cantidad:</label>
           <input id="cantidad-${helado.id}" type="number" value="1" min="1" max="${helado.stock}">
           </div>
-          <button>Añadir producto</button>
+          <h5>${helado.stock < 6 ? 'Quedan pocas unidades' : ''}</h5> 
+          <button onclick="addProducts">Añadir producto</button>
         `;
+
         contenedor.appendChild(card);
       }
     });
@@ -164,11 +168,33 @@ function pintarHelados() {
         <label for="cantidad-${helado.id}">Cantidad:</label>
         <input id="cantidad-${helado.id}" type="number" value="1" min="1" max="${helado.stock}">
       </div>
-      <button>Añadir producto</button>
+      <h5>${helado.stock < 6 ? 'Quedan pocas unidades' : ''}</h5>
+      <button class="addProducts">Añadir producto</button>
    `;
 
     contenedor.appendChild(card);
+
+    const addHelados = card.querySelector('.addProducts');
+    addHelados.addEventListener('click', function () {
+      addProducts(helado.id);
+    });
   });
 }
 
 window.onload = pintarHelados;
+
+//AÑADIR PRODUCTOS AL CARRITO
+
+function addProducts(id) {
+  const cantidad = +document.getElementById(`cantidad-${id}`).value;
+  const heladoAdd = { id: id, cantidad: cantidad };
+  if (carrito.find(elemento => elemento.id === id)) {
+    const heladoCarritoPos = carrito.findIndex(elemento => elemento.id === id);
+    carrito[heladoCarritoPos].cantidad = carrito[heladoCarritoPos].cantidad + cantidad;
+  } else {
+    carrito.push(heladoAdd);
+  }
+  console.log(carrito.length);
+}
+
+// MAÑANA STOCK Y DESABILITAR, ICONO CARRITO
