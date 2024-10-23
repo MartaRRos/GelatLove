@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- PON UN FAVICON!!! -->
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito</title>
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+        <div class="header-container">
+          <div class="header-container__menu">
+            <div class="header-container__menu__mobileicons">
+              <a href="../index.html"><img class="logo" src="../assets/images/BrandLogo.svg" alt="Brand logo"></a>
+              <div class="mobileicons">
+                <div class="mobileicons__cart"> <!-- Icono de carrito para mobile-->
+                    <a href="./cartpage.html">
+                        <img id="" class="navbar-cart-icon"  src="../assets/images/Icons/cart.svg" alt="">
+                        <span id="cart-count-mobile" class="cart-badge">0</span> <!-- El badge de cantidad -->
+                    </a> 
+                </div>
+              </div>
+            </div>
+          </div>
+            <nav class="navbar">
+              <ul class="navbar-links" id="navbar-links">
+                <li>
+                  <a class="myprofile" href="#">Mi cuenta</a>
+                </li>
+                <li>
+                  <!-- Icono de carro para menú grande-->
+                  <a href="">
+                    <img class="cart" src="../assets/images/Icons/cart.svg" alt="Cart icon">
+                    <span id="cart-count" class="cart-badge">0</span> <!-- El badge de cantidad -->
+                  </a>
+                </li>
+                <li>
+                  <!-- Icono de perfil para menú grande-->
+                  <a href="./cartpage.html"><img class="profile" src="../assets/images/Icons/person-circle.svg" alt="Profile logo"></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+    </header>
+    <!-- Migas de pan -->
+<section aria-label="breadcrumb">
+    <ul class="breadcrumb">
+      <li><a href="#">01. Resumen</a></li>
+      <li><a href="#">02. Cuenta</a></li>
+      <li><a href="#">03. Envío</a></li>
+      <li><a href="#">04. Pago</a></li>
+    </ul>
+  </section>
+  
+  <!-- Resumen del carrito -->
+  <section class="checkout">
+    <div class="checkout-container">
+      
+      <!-- Columna izquierda: Resumen de productos -->
+      <div class="checkout-left">
+        <h2>Resumen del carrito</h2>
+        <table class="checkout-table" id="checkoutTable">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <div id="resumenCompra">
+            </div>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Columna derecha: Detalles del pedido -->
+      <div class="checkout-right">
+        <h3>Detalles del Pedido</h3>
+        <ul>
+          <li>Subtotal: <span id="subtotal">0</span></li>
+          <li>Envío: <span>Gratis</span></li>
+          <li>Total (IVA incl.): <span id="total">0</span></li>
+        </ul>
+        
+        <!-- Código promocional y finalizar compra -->
+        <button class="apply-coupon">¿Tienes un código promocional?</button>
+        <input type="text" placeholder="Código">
+        <button class="finalize-btn">Finalizar compra</button>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Enlace para volver a la tienda -->
+  <div class="back-to-shop">
+    <a href="./shop.html">← Seguir comprando</a>
+  </div>
+  
+    <!-- OBLIGATORIO PONER EL ACCESO AL SCRIPT -->
+    <script type="module" src="../js/index.js"></script>
+
+    <script>
+        function actualizarNumeroCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const numeroCarrito = document.getElementById('cart-count');
+            numeroCarrito.textContent = carrito.length;
+      
+            const numeroCarritoMobile = document.getElementById('cart-count-mobile');
+            numeroCarritoMobile.textContent = carrito.length;
+        }
+        window.onload = actualizarNumeroCarrito;
+    </script>
+  </body>
+</html>

@@ -44,7 +44,7 @@
               </li>
               <li>
                 <!-- Icono de carro para menú grande-->
-                <a href="">
+                <a href="./html/cartpage.html">
                   <img class="cart" src="../assets/images/Icons/cart.svg" alt="Cart icon">
                   <span id="cart-count" class="cart-badge">0</span> <!-- El badge de cantidad -->
                 </a>
@@ -173,5 +173,16 @@
     
 
     <script type="module" src="./js/index.js"></script>
+    <script>
+      function actualizarNumeroCarrito() {
+          const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+          const numeroCarrito = document.getElementById('cart-count');
+          numeroCarrito.textContent = carrito.length;
+    
+          const numeroCarritoMobile = document.getElementById('cart-count-mobile');
+          numeroCarritoMobile.textContent = carrito.length;
+      }
+      window.onload = actualizarNumeroCarrito;
+  </script>
   </body>
 </html>
