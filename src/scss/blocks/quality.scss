@@ -1,4 +1,6 @@
 @use '../mixins/responsive.scss' as *;
+@use '../config/variables.scss' as *; 
+
 .quality {
     display: flex;
     flex-direction: column;
@@ -30,6 +32,7 @@
         font-size: 24px;
         text-align: center;
         margin-bottom: 1px;
+        color: $color-letra-extra;
 
         @include responsive(desktop) {
             text-align: left;
@@ -42,7 +45,7 @@
         font-size: 16px;
         text-align: center;
         margin-bottom: 20px;
-        color: aqua;
+        color: $color-letra-principal;
         font-weight: 600;
 
         @include responsive(desktop) {
@@ -56,22 +59,26 @@
         display: block; 
         width: fit-content;
         padding: 10px 20px; 
-        background-color: #E51D36; 
-        color: white;
-        border-radius: 5px;
+        background-color: $color-botones; 
+        color: $color-letra-secundario;
+        border-radius: 20px;
         text-align: center; 
         text-decoration: none;
         margin: 0 auto;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         
         &:hover {
-            background-color: palevioletred;
+            background-color: $color-botones-fondo-hover;
+            color: $color-botones-letra-hover;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2); 
+            transform: scale(1.02);
         }
     
         @include responsive(desktop) {
+            margin: 0;
             margin-top: 20px; 
             text-align: left; 
             padding: 10px 60px;
-            margin: 0;
         }    
     }
 }

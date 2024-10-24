@@ -1,33 +1,36 @@
-/* Variables CSS */
+// Variables de colores
+$rojo1-gelatlove: #e51d36;
+$rojo2-gelatlove: #ab1613;
 
-/* Variables SASS */
-//Colores
+// Botones
+$color-botones: #efacb5;
+$color-botones-fondo-hover: white; 
+$color-botones-letra: white; 
+$color-botones-letra-hover: #4a4a4a; 
 
-$color-marca: #E51D36;
-$color-fondo: white;
+// Botones secundarios
+$color-botones-secundario: white; 
+$color-botones-secundario-hover: #e51d36; 
+$color-botones-secundario-letra: #ff6b6b; 
+$color-botones-secundario-letra-hover: white; 
 
-$color-botones: #E51D36;
-$color-botones-fondo-hover: white;
-$color-botones-letra-hover: #E51D36;
+// Bordes
+$color-borde: #ffd5d9; // Rosa muy claro para los bordes
 
+// Tipografía
+$color-letra-principal: #4a4a4a; 
+$color-letra-secundario: white;
+$color-letra-extra: #c6924f;
+$color-letra-extra2: #efacb5; // Rosa melocotón
+$color-letra-extra3: #c9bcef; // Lila suave
 
-$color-borde: #FFD8DA;;
+// Colores para banners o fondos
+$color-banner0: #ffe0a1;
+$color-banner1: lightblue;
+$color-banner2: lightpink;
+$color-banner3: #e51d36;
+$color-banner4: #f4f4f4;
+$color-banner5: #efacb5; // Rosa melocotón pastel
 
-$color-letra-principal: white;
-$color-letra-secundario: black;
-$color-letra-extra: #FFD8DA;
-$color-letra-extra2: #EFACB5;
-$color-letra-extra3: #C9BFEF;
-
-$color-contraste-banner2: #B27A18;
-
-$color-banner0: white;
-$color-banner1: #E51D36;
-$color-banner2: #FFE0A1;
-$color-banner3: lightblue;
-$color-banner4: #C9BFEF;
-$color-banner5: #EFACB5;
-
-$color-verificado: lightgreen;
-
-//Botones
+// Color de verificado
+$color-verificado: #c4e3b7; // Verde pastel claro

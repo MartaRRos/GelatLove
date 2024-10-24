@@ -1,45 +1,68 @@
 @use '../mixins/responsive.scss' as *;
+@use '../config/variables.scss' as *; 
 
 .flex{
     display: flex;
+    flex-direction: column;
+    @include responsive(desktop) {
+        flex-direction: row;
+    }
 }
 .footer{
-    margin-top: 76px;
-    padding: 50px;
+    margin-top: 0;
+    padding: 10px;
     align-items: center;
-    background-color: #F4F4F4;
-    img{
-        width: 30%;
+    background-color: $color-banner4;
+    @include responsive(desktop) {
+        margin-top: 76px;
+        padding: 20px;
     }
+
+    img{
+        width: 70%;
+        @include responsive(desktop) {
+            width: 30%;
+        }
+    }
+
     div{
-        padding: 100px;
-        text-align: left;
+        padding: 20px;
+        text-align: center;
         h5{
             font-weight: 600;
-            color: black;
+            font-size: 25px;
+            color: $color-letra-principal;
         }
         h6{
             font-weight: 400;
+            font-size: 15px;
             &:hover{
                 text-decoration: underline;
                 cursor: pointer;
             }
         }
+        @include responsive(desktop) {
+            text-align: left;
+            padding: 80px;
+        }
     }
 }
+
 .redes{
+    display: flex;
     width: 100%;
     padding: 20px;
+    justify-content: center;
     text-align: center;
-    background-color: #ff0000;
-    i{
-        color: white;
-        padding: 10px;
+    background-color: $color-banner0;
+    a{
+        margin: 0 20px 0 0;
     }
 }
 .propiedad{
-    background-color: #ff0000;
-    color: black;
+    background-color: $color-banner5;
+    color: $color-letra-secundario;
     text-align: center;
     padding: 10px;
+    font-weight: 800;
 }

@@ -1,4 +1,5 @@
 @use '../mixins/responsive.scss' as *;
+@use '../config/variables.scss' as *; 
 
 .breadcrumb {
     list-style: none;

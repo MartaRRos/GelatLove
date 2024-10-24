@@ -1,9 +1,10 @@
 @use '../mixins/responsive.scss' as *;
+@use '../config/variables.scss' as *; 
 
 .franchisee {
     display: flex;
     flex-direction: column;
-    background-color: lightblue;
+    background-color: $color-banner1;
     padding: 20px;
 
     .content {
@@ -15,14 +16,14 @@
             font-size: 28px;
             margin-bottom: 10px;
             text-align: center;
-            color: chocolate;
+            color: $color-letra-principal;
         }
 
         p {
+            padding-bottom: 20px;
             font-size: 16px;
             text-align: center;
-            color: darkorange;
-            padding-bottom: 20px;
+            color: $color-letra-principal;
         }
     }
 
@@ -37,14 +38,14 @@
 
     @include responsive(desktop) {
         flex-direction: row;
-        justify-content: space-between; /* Aumentar el espacio entre texto e imagen */
-        padding: 30px; /* Aumentar el padding general */
+        justify-content: space-between;
+        padding: 30px;
 
         .content {
             flex: 1;
             margin: 5%;
             h2, p {
-                text-align: left; /* Alineamos el texto a la izquierda en desktop */
+                text-align: left;
             }
             h2{
                 font-size: 50px;
@@ -56,7 +57,7 @@
 
         .franchisee__image {
             flex: 1;
-            max-width: 600px; /* Limitar el ancho de la imagen */
+            max-width: 600px;
             margin-top: 7%;
         }
     }

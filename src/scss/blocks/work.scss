@@ -1,22 +1,24 @@
 @use '../mixins/responsive.scss' as *;
+@use '../config/variables.scss' as *; 
 
 .cv {
     align-items: center;
     margin-top: 5%;
   
     .trabajo {
-        color: black;
+        max-width: 90%;
         padding: 40px;
         margin: 0 auto;
-        background-color: lightpink;
-        border-radius: 50px 50px 0 0;
         text-align: center;
-        max-width: 90%;
+        border-radius: 50px 50px 0 0;
+        color: $color-letra-principal;
+        background-color: $color-banner2;
   
         @include responsive(desktop) {
             padding: 180px;
             margin-left: 300px;
-            border-radius: 100px 0 0 0;
+            border-radius: 200px 0 0 0;
+            text-align: left;
         }
     }
   
@@ -27,7 +29,7 @@
         @include responsive(desktop) {
             display: block;
             position: absolute;
-            top: 3000px;
+            top: 2818px;
             left: 0;
             width: 25%;
       }
@@ -54,16 +56,23 @@
     }
   
     a {
-        margin-top: 20px;
-        padding: 10px 40px;
-        background-color: bisque;
         border-radius: 50px;
         display: inline-block;
+        margin-top: 20px;
+        padding: 10px 40px;
+        background-color: $color-botones-secundario;
+        color: $color-botones-secundario-letra;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover{
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2); 
+            transform: scale(1.02); 
+            color: $color-botones-secundario-letra-hover;
+            background-color: $color-botones-secundario-hover;
+        }
     
         @include responsive(desktop) {
-            display: flex;
             margin-top: 20px; 
-            text-align: left; 
         }
       }
   }
