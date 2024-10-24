@@ -2,6 +2,9 @@
 $rojo1-gelatlove: #e51d36;
 $rojo2-gelatlove: #ab1613;
 
+// Header background
+$header-background: #f4f4f4;
+
 // Botones
 $color-botones: #efacb5;
 $color-botones-fondo-hover: white; 
@@ -14,15 +17,10 @@ $color-botones-secundario-hover: #e51d36;
 $color-botones-secundario-letra: #ff6b6b; 
 $color-botones-secundario-letra-hover: white; 
 
-// Bordes
-$color-borde: #ffd5d9; // Rosa muy claro para los bordes
-
 // Tipografía
 $color-letra-principal: #4a4a4a; 
 $color-letra-secundario: white;
 $color-letra-extra: #c6924f;
-$color-letra-extra2: #efacb5; // Rosa melocotón
-$color-letra-extra3: #c9bcef; // Lila suave
 
 // Colores para banners o fondos
 $color-banner0: #ffe0a1;
@@ -30,7 +28,8 @@ $color-banner1: lightblue;
 $color-banner2: lightpink;
 $color-banner3: #e51d36;
 $color-banner4: #f4f4f4;
-$color-banner5: #efacb5; // Rosa melocotón pastel
+$color-banner5: #efacb5;
 
-// Color de verificado
-$color-verificado: #c4e3b7; // Verde pastel claro
+// Icono productos
+$background-icono: #e51d36;
+$color-icono: white;

@@ -155,7 +155,8 @@ function filtrarHelados() {
       }
     });
   } else {
-    pintarHelados();
+    const contenedorHeladosTienda = document.getElementById('heladoContainer');
+    pintarHelados(contenedorHeladosTienda);
   }
 }
 
@@ -231,7 +232,8 @@ function bajarStock(heladoAdded) {
   if (vainilla.checked || chocolate.checked || caramelo.checked || newin.checked) {
     filtrarHelados();
   } else {
-    pintarHelados();
+    const contenedorHeladosTienda = document.getElementById('heladoContainer');
+    pintarHelados(contenedorHeladosTienda);
   }
 }
 
@@ -247,12 +249,12 @@ function actualizarNumeroCarrito() {
 function resumenCarrito(contenedorResumenCompra) {
   contenedorResumenCompra.innerHTML = '';
   const heladosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
-  heladosCarrito.forEach(heladoCarro => {
+  heladosCarrito.forEach((heladoCarro, i) => {
     const infoHeladoPos = helados.findIndex(helado => helado.id === heladoCarro.id);
     const infoHelado = helados[infoHeladoPos];
     const infoHeladoCard = document.createElement('tr');
     infoHeladoCard.innerHTML = `
-      <td><img src="${infoHelado.image}" alt="${infoHelado.nombre}"></td>
+      <td><img class="imagenfinal" src="${infoHelado.image}" alt="${infoHelado.nombre}"></td>
       <td>${infoHelado.nombre}</td>
       <td>
         <div class="quantity-control">
@@ -260,9 +262,14 @@ function resumenCarrito(contenedorResumenCompra) {
         </div>
       </td>
       <td>${infoHelado.precio} €</td>
+      <td><button class="botonEliminar"><img class="eliminar" src="../assets/images/Icons/trash3.svg" alt="Icono de basura"></button></td>
     `;
 
     contenedorResumenCompra.appendChild(infoHeladoCard);
+    const quitarHelados = infoHeladoCard.querySelector('.botonEliminar');
+    quitarHelados.addEventListener('click', function () {
+      eliminarHelados(infoHelado, heladoCarro.cantidad, i);
+    });
   });
   precioTotal();
 }
@@ -285,4 +292,19 @@ function precioTotal() {
     const totalConIva = precioTotal + iva;
     total.textContent = totalConIva.toFixed(2) + '€';
   }
+}
+
+function eliminarHelados(helado, cantidad, pos) {
+  helado.stock = helado.stock + cantidad;
+  helados[helado.id - 1] = helado;
+  const heladosCarrito = JSON.parse(localStorage.getItem('carrito'));
+  heladosCarrito.splice(pos, 1);
+  if (heladosCarrito.length === 0) {
+    localStorage.removeItem('carrito');
+  } else {
+    localStorage.setItem('carrito', JSON.stringify(heladosCarrito));
+  }
+  actualizarNumeroCarrito();
+  const contenedorResumenCompra = document.getElementById('resumenCompra');
+  resumenCarrito(contenedorResumenCompra);
 }

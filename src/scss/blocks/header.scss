@@ -1,4 +1,5 @@
 @use '../mixins/responsive.scss' as *;
+@use '../config/variables.scss' as *; 
 
 .logo{
     width: 250px;
@@ -7,13 +8,13 @@
 
 .cart-badge {
     position: absolute;
-    background-color: red;
-    color: white;
-    border-radius: 100px;
     padding: 5px 7px;
-    font-size: 8px;
     top: 19px;
     right: 75px;
+    border-radius: 100px;
+    background-color: $background-icono;
+    font-size: 8px;
+    color: $color-icono;
     @include responsive(desktop) {
       top: 19px;
       right: 96px;
@@ -27,7 +28,7 @@ header{
     left: 0;
     right: 0;
     display: flex;
-    background-color: #F4F4F4;
+    background-color: $header-background;
     z-index: 999;
     .header-container{
         width: 100%;
@@ -37,7 +38,7 @@ header{
         align-items: center;
     }
     .navbar{
-        background-color: #F4F4F4;
+        background-color: $header-background;
     }
     .header-container__menu__mobileicons{
         display: flex;
@@ -61,17 +62,16 @@ header{
         display: none;
         flex-direction: column;
         align-items: center;
-        color: black;
+        color: $color-letra-principal;
         li{
             padding: 7px;
         }
-        
     }
 
     .navbar-links a{
         &:hover{
             font-weight: 800;
-            color: #E51D36;
+            color: $rojo1-gelatlove;
         }
     }
 
@@ -86,13 +86,10 @@ header{
         @include responsive(desktop){
             width: 25px;
         }
-
     }
     
-    
-
     @include responsive(desktop){
-        background-color: #F4F4F4;
+        background-color: $header-background;
         .logo{
             width: 270px;
             height: 80px;
@@ -118,9 +115,9 @@ header{
                 gap: 10px;
                 a &:hover{
                     font-weight: 800;
-                    color: #E51D36;
+                    color: $rojo1-gelatlove;
                 }
-              }
+            }
         }
         .profile, .cart {
             display: flex; 
