@@ -284,7 +284,7 @@ function precioTotal() {
   });
   const subtotal = document.getElementById('subtotal');
   if (subtotal) {
-    subtotal.textContent = precioTotal + '€';
+    subtotal.textContent = precioTotal.toFixed(2) + '€';
   }
   const total = document.getElementById('total');
   if (total) {

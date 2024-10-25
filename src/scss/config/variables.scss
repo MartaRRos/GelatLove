@@ -2,8 +2,10 @@
 $rojo1-gelatlove: #e51d36;
 $rojo2-gelatlove: #ab1613;
 
-// Header background
+// Header and icecream card background
 $header-background: #f4f4f4;
+$icecream-background: white;
+$border-icecream-background: #dcdcdc;
 
 // Botones
 $color-botones: #efacb5;
@@ -21,6 +23,8 @@ $color-botones-secundario-letra-hover: white;
 $color-letra-principal: #4a4a4a; 
 $color-letra-secundario: white;
 $color-letra-extra: #c6924f;
+$color-letra-precio: #228b22;
+$color-letra-stock: #ab1613;
 
 // Colores para banners o fondos
 $color-banner0: #ffe0a1;
@@ -33,3 +37,16 @@ $color-banner5: #efacb5;
 // Icono productos
 $background-icono: #e51d36;
 $color-icono: white;
+
+// Botón productos y tienda
+$background-addproduct: #4a4a4a;
+$color-addproduct: white;
+$background-hover-addproduct: #949494;
+
+// Tienda
+$backgroundcolor: #ffe8eb;
+$backgroundcolor2: #fafafa;
+$color-letra-tienda: #efacb5;
+$color-letra-tienda-hover: #cd4f60;
+$imput-border: #ddd;
+$color-fin:#fde7cb;

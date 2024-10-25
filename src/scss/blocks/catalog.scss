@@ -11,8 +11,8 @@
 }
 
 .tienda{
-    font-weight: 800;
-    color: #E51D36;
+  font-weight: 800;
+  color: $rojo1-gelatlove;
 }
 
 .cart-badge {
@@ -23,7 +23,7 @@
   padding: 5px 7px;
   font-size: 8px;
   top: 19px;
-  right: 58px;
+  right: 75px;
   @include responsive(desktop) {
     top: 19px;
     right: 96px;
@@ -31,33 +31,32 @@
 }
 
 button:disabled{
-  background-color: #d16370;
-  color: #666;
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.1;
 }
 
 //Filtros
 .products{
-    @include responsive(desktop) {
-        display: flex;
-        flex-direction: row;
-    }
+  @include responsive(desktop) {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .filters {
-    background-color: lightpink; 
+    background-color: $color-banner5; 
     padding: 20px; 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
     @include responsive(desktop) {
-        width: 40%;
+      min-width: 25%;
+      width: 25%;
     }
 
     h2 {
         font-size: 24px; 
         margin-bottom: 15px;
-        color: #333;
+        color: $color-letra-principal;
     }
 
     .filter-category {
@@ -66,7 +65,7 @@ button:disabled{
         h3 {
             font-size: 20px; 
             margin-bottom: 10px;
-            color: #E51D36;
+            color: $color-letra-principal;
         }
 
         .filter-options {
@@ -76,7 +75,7 @@ button:disabled{
 
             label {
                 font-size: 16px;
-                color: #555; 
+                color: $color-letra-principal; 
                 cursor: pointer; 
 
                 input {
@@ -101,14 +100,15 @@ button:disabled{
     @include responsive(desktop) {
         display: flex;
         flex-direction: row;
+        justify-content: left;
     }
   
     .helado-card {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: white;
-        border: 1px solid #dcdcdc; 
+        background-color: $icecream-background;
+        border: 1px solid $border-icecream-background; 
         border-radius: 10px;
         padding: 15px;
         text-align: center; 
@@ -118,7 +118,7 @@ button:disabled{
         box-shadow 0.3s ease; 
         &:hover {
             transform: translateY(-5px); 
-      
+  
             img {
               filter: grayscale(0%); 
             }
@@ -138,20 +138,20 @@ button:disabled{
       h3 {
         font-size: 18px;
         margin: 10px 0;
-        color: #333;
+        color: $color-letra-principal;
       }
 
       p {
         height: 80px;
         font-size: 14px;
-        color: #666;
+        color: $color-letra-principal;
         margin-bottom: 10px;
       }
   
       .precio {
         font-size: 16px;
         font-weight: bold;
-        color: #E51D36; 
+        color: $color-letra-precio; 
         margin-bottom: 10px;
       }
 
@@ -164,20 +164,20 @@ button:disabled{
         label {
           margin-right: 10px;
           font-size: 14px;
-          color: #333;
+          color: $color-letra-principal;
         }
     
         input{
           width: 60px;
           padding: 8px;
-          border: 1px solid #ccc;
+          border: 1px solid $border-icecream-background;
           border-radius: 5px;
           text-align: center;
           font-size: 14px;
           transition: border-color 0.3s ease;
           
           &:focus {
-            border-color: #e51d36;
+            border-color: $rojo1-gelatlove;
             outline: none;
           }
         }
@@ -185,15 +185,15 @@ button:disabled{
   
       button {
         padding: 8px 12px;
-        background-color: #E51D36;
-        color: white;
+        background-color: $background-addproduct;
+        color: $color-addproduct;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
   
         &:hover {
-          background-color: #c81b30; 
+          background-color: $background-hover-addproduct; 
         }
       }
   
@@ -203,7 +203,7 @@ button:disabled{
       }
     }
     h5{
-      color: black;
+      color: $color-letra-stock;
     }
   
 }
